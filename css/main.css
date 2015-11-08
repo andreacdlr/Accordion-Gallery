@@ -1,0 +1,191 @@
+/* Escribe tu código CSS aquí */
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg.jpg);
+}
+
+
+.content-accordion{
+	width: 685px;
+	margin: 80px auto 20px;
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+	border: 7px solid rgba(255,255,255,0.6);
+	overflow: hidden;
+}
+
+
+
+.content-accordion figure{
+	position: absolute;
+	top: 0;
+	left:50px;
+	width: 335px;
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+}
+
+
+.content-accordion>figure{
+	position: relative;
+	left: 0 !important;
+}
+
+
+.content-accordion img{
+	display: block;
+	width: 100%;
+}
+.content-accordion input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	opacity: 0;
+	appearance:none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	z-index: 100;
+
+}
+
+.content-accordion input:checked{
+	width: 5px;
+	left: auto;
+	right: 0px;
+}
+
+.content-accordion input:checked ~ figure {
+    left: 335px;
+    transition: all 0.7s ease-in-out;
+}
+
+
+.content-accordion figcaption{
+     width: 100%;
+     height: 100%;
+     background: rgba(87, 73, 81, 0.1);
+     position: absolute;
+     top: 0px;
+     transition: all 0.2s linear;
+     -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+}
+
+.content-accordion figcaption span{
+	position: absolute;
+	top: 40%;
+	margin-top: -30px;
+	right: 20px;
+	left: 20px;
+	overflow: hidden;
+	text-align: center;
+	background: rgba(87, 73, 81, 0.3);
+	line-height: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+	opacity: 0;
+	letter-spacing: 4px;
+	font-weight: 700;
+	padding:20px;
+	color: #fff;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+
+}
+
+
+.content-accordion input:checked + figcaption,
+.content-accordion input:checked:hover + figcaption{
+	background: rgba(87, 73, 81, 0);
+}
+
+
+.content-accordion input:checked + figcaption span{
+	transition:all 0.4s ease-in-out 0.5s;
+	-webkit-transition: all 0.4s ease-in-out 0.5s; */
+    -moz-transition: all 0.4s ease-in-out 0.5s;
+    -o-transition: all 0.4s ease-in-out 0.5s;
+    -ms-transition: all 0.4s ease-in-out 0.5s;
+	opacity: 1;
+	top: 50%;
+}
+
+.content-accordion #content-selector-last:checked + figcaption span {
+	transition-delay: 0.3s;
+}
+
+.content-accordion input:hover + figcaption {
+	background: rgba(87, 73, 81, 0.03);
+}
+
+
+.content-accordion input:checked ~ figure input{
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+    .content-accordion { 
+		width: 540px; 
+	}
+	
+	.content-accordion figure { 
+		left: 40px; 
+		width: 260px; 
+	}
+	
+	.content-accordion input { 
+		width: 40px; 
+	}
+	
+	.content-accordion input:checked ~ figure { 
+		left: 260px; 
+	}
+	
+	.content-accordion figcaption span { 
+		font-size: 16px; 
+	}
+}
+
+@media screen and (max-width: 520px) {
+    .content-accordion{ 
+		width: 320px; 
+	}
+	
+	.content-accordion figure { 
+		left: 20px; 
+		width: 180px; 
+	}
+	
+	.content-accordion input { 
+		width: 20px; 
+	}
+	
+	.content-accordion input:checked ~ figure { 
+		left: 180px; 
+	}
+	
+	.content-accordion figcaption span { 
+		font-size: 12px; 
+		letter-spacing: 2px; 
+		padding: 10px; 
+		margin-top: -20px; 
+	} 
+
+}
